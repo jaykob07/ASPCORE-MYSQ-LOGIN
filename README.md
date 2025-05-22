@@ -1,5 +1,7 @@
 # ReportesMVC (.NET 8 + Razor Pages + MySQL)
 
+![Image_Alt](https://github.com/jaykob07/ASPCORE-MYSQ-LOGIN/blob/81eca062821cda742373c2f887ee53879283a77c/pic.png)
+
 Proyecto MVC con Razor Pages en .NET 8, utilizando **Pomelo.EntityFrameworkCore.MySql** para conexión con base de datos **MySQL**, ejecutado y configurado sobre **Mac (M1/M2)**.
 
 ## ✅ Requisitos
