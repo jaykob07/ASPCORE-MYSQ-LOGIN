@@ -2,6 +2,8 @@
 
 ![Image_Alt](https://github.com/jaykob07/ASPCORE-MYSQ-LOGIN/blob/81eca062821cda742373c2f887ee53879283a77c/pic.png)
 
+![Image_Alt](https://github.com/jaykob07/ASPCORE-MYSQ-LOGIN/blob/e22ffeb595c2f5336704345267366dbd8b3b5ca5/pic2.png)
+
 Proyecto MVC con Razor Pages en .NET 8, utilizando **Pomelo.EntityFrameworkCore.MySql** para conexión con base de datos **MySQL**, ejecutado y configurado sobre **Mac (M1/M2)**.
 
 ## ✅ Requisitos
