@@ -1,0 +1,28 @@
+@model List<ReportesMVC.Models.Persona>
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<h2>Lista de Personas</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Nombre</td>
+                <td>@p.Correo</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@p.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

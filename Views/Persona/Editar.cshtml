@@ -1,0 +1,18 @@
+@model ReportesMVC.Models.Persona
+
+<h2>Editar Persona</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div><label>Nombre</label><input asp-for="Nombre" /></div>
+    <div><label>ApPaterno</label><input asp-for="ApPaterno" /></div>
+    <div><label>ApMaterno</label><input asp-for="ApMaterno" /></div>
+    <div><label>Sexo</label><input asp-for="IIdSexo" /></div>
+    <div><label>Correo</label><input asp-for="Correo" /></div>
+    <div><label>Teléfono</label><input asp-for="TelefonoOCelular1" /></div>
+    <div><label>Tipo Documento</label><input asp-for="IIdTipoDocumento" /></div>
+    <div><label>Identificación</label><input asp-for="NumeroIdentificacion" /></div>
+
+    <button type="submit">Guardar</button>
+</form>
