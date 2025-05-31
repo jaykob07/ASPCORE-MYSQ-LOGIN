@@ -1,18 +1,62 @@
 @model ReportesMVC.Models.Persona
+@{
+    ViewData["Title"] = "Editar Persona";
+}
 
-<h2>Editar Persona</h2>
+<div style="max-width: 600px; margin: 30px auto; padding: 25px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px;">Editar Persona</h2>
 
-<form asp-action="Editar" method="post">
-    <input type="hidden" asp-for="Id" />
+    <form asp-action="Editar" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+        <input type="hidden" asp-for="Id" />
 
-    <div><label>Nombre</label><input asp-for="Nombre" /></div>
-    <div><label>ApPaterno</label><input asp-for="ApPaterno" /></div>
-    <div><label>ApMaterno</label><input asp-for="ApMaterno" /></div>
-    <div><label>Sexo</label><input asp-for="IIdSexo" /></div>
-    <div><label>Correo</label><input asp-for="Correo" /></div>
-    <div><label>Teléfono</label><input asp-for="TelefonoOCelular1" /></div>
-    <div><label>Tipo Documento</label><input asp-for="IIdTipoDocumento" /></div>
-    <div><label>Identificación</label><input asp-for="NumeroIdentificacion" /></div>
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Nombre:</label>
+            <input asp-for="Nombre" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
 
-    <button type="submit">Guardar</button>
-</form>
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Apellido Paterno:</label>
+            <input asp-for="ApPaterno" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Apellido Materno:</label>
+            <input asp-for="ApMaterno" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Sexo:</label>
+            <input asp-for="IIdSexo" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Correo:</label>
+            <input asp-for="Correo" type="email" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Teléfono:</label>
+            <input asp-for="TelefonoCelular" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Tipo Documento:</label>
+            <input asp-for="IIdTipoDocumento" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center;">
+            <label style="font-weight: 500; color: #495057;">Identificación:</label>
+            <input asp-for="NumeroIdentificacion" style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px;" />
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+            <button type="submit" 
+                    style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;"
+                    onmouseover="this.style.backgroundColor='#218838'" 
+                    onmouseout="this.style.backgroundColor='#28a745'">
+                Guardar Cambios
+            </button>
+        </div>
+    </form>
+</div>
+

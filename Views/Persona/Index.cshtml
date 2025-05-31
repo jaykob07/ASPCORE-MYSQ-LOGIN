@@ -3,26 +3,50 @@
     ViewData["Title"] = "Personas";
 }
 
-<h2>Lista de Personas</h2>
+<div style="max-width: 1000px; margin: 30px auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px;">Lista de Personas</h2>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var p in Model)
-        {
-            <tr>
-                <td>@p.Nombre</td>
-                <td>@p.Correo</td>
-                <td>
-                    <a asp-action="Editar" asp-route-id="@p.Id">Editar</a>
-                </td>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr style="background-color: #3498db; color: white;">
+                <th style="padding: 12px; text-align: left;">Nombre</th>
+                <th style="padding: 12px; text-align: left;">Correo</th>
+                <th style="padding: 12px; text-align: left;">Acción</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr style="border-bottom: 1px solid #ddd; transition: background-color 0.3s;" 
+                    onmouseover="this.style.backgroundColor='#f1f1f1'" 
+                    onmouseout="this.style.backgroundColor='transparent'">
+                    <td style="padding: 12px;">@p.Nombre</td>
+                    <td style="padding: 12px;">@p.Correo</td>
+                    <td style="padding: 12px;">
+                        <!-- Editar: se mantiene como enlace -->
+                        <a asp-action="Editar" asp-route-id="@p.Id" 
+                        style="color: #3498db; text-decoration: none; font-weight: 500;"
+                        onmouseover="this.style.textDecoration='underline'" 
+                        onmouseout="this.style.textDecoration='none'">
+                            Editar
+                        </a>
+                        
+                        <br />
+
+                        <!-- Eliminar: se convierte en un formulario POST para seguridad -->
+                        <form asp-action="Eliminar" asp-route-id="@p.Id" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro que quieres eliminar esta persona?');">
+                            <button type="submit"
+                                    style="color: #dc0808; background: none; border: none; padding: 0; font-weight: 500; cursor: pointer;"
+                                    onmouseover="this.style.textDecoration='underline'" 
+                                    onmouseout="this.style.textDecoration='none'">
+                                Eliminar
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

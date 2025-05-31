@@ -1,32 +1,48 @@
-﻿@* @{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div> *@
-
+﻿
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Iniciar Sesión";
 }
 
-<h2>Login</h2>
+<div style="max-width: 400px; margin: 50px auto; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+    <h2 style="text-align: center; color: #343a40; margin-bottom: 24px;">Iniciar Sesión</h2>
 
-<form asp-action="Index" method="post">
-    <div>
-        <label>Correo</label>
-        <input type="email" name="correo" required />
-    </div>
-    <div>
-        <label>Contraseña</label>
-        <input type="password" name="contrasena" required />
-    </div>
-    <button type="submit">Ingresar</button>
-</form>
+    <form asp-action="Index" method="post" style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <label style="font-weight: 500; color: #495057;">Correo Electrónico</label>
+            <input 
+                type="email" 
+                name="correo" 
+                required 
+                style="padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 16px;"
+                placeholder="ejemplo@correo.com"
+            />
+        </div>
 
-@if (ViewBag.Mensaje != null)
-{
-    <p style="color:red;">@ViewBag.Mensaje</p>
-}
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <label style="font-weight: 500; color: #495057;">Contraseña</label>
+            <input 
+                type="password" 
+                name="contrasena" 
+                required 
+                style="padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 16px;"
+                placeholder="••••••••"
+            />
+        </div>
 
+        <button 
+            type="submit" 
+            style="padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;"
+            onmouseover="this.style.backgroundColor='#0069d9'" 
+            onmouseout="this.style.backgroundColor='#007bff'"
+        >
+            Ingresar
+        </button>
+    </form>
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div style="margin-top: 16px; padding: 10px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+            <p style="color: #856404; margin: 0;">@ViewBag.Mensaje</p>
+        </div>
+    }
+</div>
